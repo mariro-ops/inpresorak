@@ -1,0 +1,158 @@
+*PPD-Adobe: "4.3"
+*%
+*%  Printer Description file
+*%     for "Ricoh IM 8000 PDF"
+*%
+*%     CreationDate: 2020/12/29
+*%
+*%     COPYRIGHT (C) 2020 RICOH COMPANY, LTD.
+*%
+
+*FileVersion: "1.0"
+*FormatVersion: "4.3"
+*LanguageEncoding: ISOLatin1
+*LanguageVersion: English
+*ModelName: "Ricoh IM 8000"
+*PCFileName: "RI1882E3.PPD"
+*Manufacturer: "Ricoh"
+*Product: "(RICOH IM 8000 PDF)"
+*PSVersion: "(3018.102) 0"
+*ShortNickName: "Ricoh IM 8000 PDF"
+*NickName: "Ricoh IM 8000 PDF"
+*1284DeviceID: "MFG:RICOH;MDL:IM 8000;CMD:PDF,PJL;"
+
+*cupsVersion:       1.1
+*cupsManualCopies: False
+*cupsCommands:      ""
+
+*JCLBegin:             "<1B>%-12345X@PJL JOB<0A>"
+*JCLToPDFInterpreter: "@PJL ENTER LANGUAGE = PDF<0A>"
+*JCLEnd:              "<1B>%-12345X@PJL EOJ <0A><1B>%-12345X"
+
+*cupsFilter: "application/vnd.cups-pdf 0 -"
+
+*%========== Basic Device Capabilities ==========
+
+*LanguageLevel: "3"
+*ColorDevice: False
+*DefaultColorSpace: Gray
+
+*TTRasterizer: Type42
+
+*FileSystem: True
+
+*Throughput: "80"
+*LandscapeOrientation: Minus90
+*HWMargins: 12 12 12 12
+
+*%========== InstallableOptions ==========
+*OpenGroup: InstallableOptions/Installable Options
+
+*OpenUI *LargeCapacityTray/Large Capacity Tray: PickOne
+*DefaultLargeCapacityTray: NotInstalled
+*LargeCapacityTray NotInstalled/Not Installed: ""
+*LargeCapacityTray Installed/Installed: ""
+*CloseUI: *LargeCapacityTray
+
+*OpenUI *ShiftTray/Shift Tray: PickOne
+*DefaultShiftTray: NotInstalled
+*ShiftTray NotInstalled/Not Installed: ""
+*ShiftTray Installed/Installed: ""
+*CloseUI: *ShiftTray
+
+*OpenUI *Finisher/Finisher: PickOne
+*DefaultFinisher: NotInstalled
+*Finisher NotInstalled/Not Installed: ""
+*Finisher FinVICTORIAJ/Finisher SR4140: ""
+*Finisher FinVOLGAG/Finisher SR4150: ""
+*Finisher FinVOLGAGBK/Finisher SR4160: ""
+*CloseUI: *Finisher
+
+*OpenUI *Mailbox/Mailbox: PickOne
+*DefaultMailbox: NotInstalled
+*Mailbox NotInstalled/Not Installed: ""
+*Mailbox Installed/Installed: ""
+*CloseUI: *Mailbox
+
+*OpenUI *MultiFold/Folding Unit: PickOne
+*DefaultMultiFold: NotInstalled
+*MultiFold NotInstalled/Not Installed: ""
+*MultiFold MultiFoldingUnit1/Folding Unit FD4020: ""
+*MultiFold MultiFoldingUnit2/Folding Unit FD4010: ""
+*CloseUI: *MultiFold
+
+*OpenUI *MultiHolePunchUnit/Multi-hole Punch Unit: PickOne
+*DefaultMultiHolePunchUnit: NotInstalled
+*MultiHolePunchUnit NotInstalled/Not Installed: ""
+*MultiHolePunchUnit Installed/Installed: ""
+*CloseUI: *MultiHolePunchUnit
+
+*CloseGroup: InstallableOptions
+
+*JCLOpenUI *PageSize: PickOne
+*OrderDependency: 100 JCLSetup *PageSize
+*DefaultPageSize: A4
+*PageSize A3/A3 (297 x 420 mm): "@PJL SET FITTOPAGESIZE=A3<0A>"
+*PageSize A4/A4 (210 x 297 mm): "@PJL SET FITTOPAGESIZE=A4<0A>"
+*PageSize A5/A5 (148 x 210 mm): "@PJL SET FITTOPAGESIZE=A5<0A>"
+*PageSize A6/A6 (105 x 148 mm): "@PJL SET FITTOPAGESIZE=A6<0A>"
+*PageSize Letter/Letter (8.5 x 11): "@PJL SET FITTOPAGESIZE=LETTER<0A>"
+*JCLCloseUI: *PageSize
+
+*JCLOpenUI *PageRegion: PickOne
+*OrderDependency: 100 JCLSetup *PageRegion
+*DefaultPageRegion: A4
+*PageRegion A3/A3 (297 x 420 mm): "@PJL SET PAPER=A3<0A>"
+*PageRegion A4/A4 (210 x 297 mm): "@PJL SET PAPER=A4<0A>"
+*PageRegion A5/A5 (148 x 210 mm): "@PJL SET PAPER=A5<0A>"
+*PageRegion A6/A6 (105 x 148 mm): "@PJL SET PAPER=A6<0A>"
+*PageRegion Letter/Letter (8.5 x 11): "@PJL SET PAPER=LETTER<0A>"
+*JCLCloseUI: *PageRegion
+
+*DefaultImageableArea: A4
+*ImageableArea A3/A3 (297 x 420 mm): "12 12 830 1179"
+*ImageableArea A4/A4 (210 x 297 mm): "12 12 583 830"
+*ImageableArea A5/A5 (148 x 210 mm): "12 12 408 583"
+*ImageableArea A6/A6 (105 x 148 mm): "12 12 285 408"
+*ImageableArea Letter/Letter (8.5 x 11): "12 12 600 780"
+
+*DefaultPaperDimension: A4
+*PaperDimension A3/A3 (297 x 420 mm): "842 1191"
+*PaperDimension A4/A4 (210 x 297 mm): "595 842"
+*PaperDimension A5/A5 (148 x 210 mm): "420 595"
+*PaperDimension A6/A6 (105 x 148 mm): "297 420"
+*PaperDimension Letter/Letter (8.5 x 11): "612 792"
+
+*JCLOpenUI *InputSlot: PickOne
+*OrderDependency: 100 JCLSetup *InputSlot
+*DefaultInputSlot: Auto
+*InputSlot MultiTray/Bypass Tray: "@PJL SET TRAY=BYPASS<0A>"
+*InputSlot 1Tray/Tray 1 (LCT): "@PJL SET TRAY=TRAY1<0A>"
+*InputSlot 2Tray/Tray 2: "@PJL SET TRAY=TRAY2<0A>"
+*InputSlot 3Tray/Tray 3: "@PJL SET TRAY=TRAY3<0A>"
+*InputSlot 5Tray/Large Capacity Tray: "@PJL SET TRAY=LCT<0A>"
+*InputSlot Auto/Auto Select: "@PJL SET TRAY=ALL<0A>"
+*JCLCloseUI: *InputSlot
+
+*JCLOpenUI *Duplex/Duplex: PickOne
+*OrderDependency: 100 JCLSetup *Duplex
+*DefaultDuplex: DuplexNoTumble
+*Duplex None/Off:  "@PJL SET DUPLEX=OFF<0A>"
+*Duplex DuplexNoTumble/Long Edge:  "@PJL SET DUPLEX=ON<0A>@PJL SET BINDING=LONGEDGE<0A>"
+*Duplex DuplexTumble/Short Edge:  "@PJL SET DUPLEX=ON<0A>@PJL SET BINDING=SHORTEDGE<0A>"
+*JCLCloseUI: *Duplex
+
+*OpenGroup: JobLog/Job Log
+*JCLOpenUI *JobType/JobType: PickOne
+*OrderDependency: 100 JCLSetup *JobType
+*DefaultJobType: DocServer
+*JobType Normal/Normal: ""
+*JobType SamplePrint/Sample Print: "@PJL PROOFJOB<0A>"
+*JobType LockedPrint/Locked Print: "@PJL SECUREJOB<0A>"
+*JobType HoldPrint/Hold Print: "@PJL SET SAVEMODE=OFF<0A>@PJL PAUSEDJOB<0A>"
+*JobType StoredPrint/Stored Print: "@PJL SET ACCESSMODE=PRIVATE<0A>@PJL SET SAVEMODE=ON<0A>@PJL PAUSEDJOB<0A>"
+*JobType StoreandPrint/Store and Print: "@PJL SET ACCESSMODE=PRIVATE<0A>@PJL SET SAVEMODE=ON<0A>"
+*JobType DocServer/Document Server: "@PJL SET DISKIMAGE=ON<0A>@PJL SET JOBNAME=<22>Chrometik Bidalia<22><0A>"
+*JCLCloseUI: *JobType
+
+*CloseGroup: JobLog/Job Log
